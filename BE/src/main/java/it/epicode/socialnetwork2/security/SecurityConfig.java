@@ -2,6 +2,7 @@ package it.epicode.socialnetwork2.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,6 +33,8 @@ public class SecurityConfig {
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authorizeHttpRequests(authz -> authz
 						.requestMatchers("/api/auth/**").permitAll()
+						// le immagini caricate: un <img src> non puo' mandare il token
+						.requestMatchers(HttpMethod.GET, "/uploads/**").permitAll()
 						.anyRequest().authenticated()
 				)
 				// il nostro filtro JWT gira prima di quello standard username/password
