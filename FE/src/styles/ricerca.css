@@ -1,4 +1,4 @@
-/* Ricerca nel testo OCR delle foto */
+/* Ricerca nel testo OCR di foto dei post e documenti dell'utente */
 
 .risultati {
   list-style: none;
@@ -34,4 +34,11 @@
   overflow-wrap: anywhere;
   background: var(--carta-2);
   border-radius: 8px;
+}
+
+/* Risultato "documento": niente anteprima, titolo e link al file in colonna */
+.risultato strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  overflow-wrap: anywhere;
 }
