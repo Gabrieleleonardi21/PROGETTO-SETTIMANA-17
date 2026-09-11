@@ -1,0 +1,136 @@
+/* Sidebar di navigazione: colonna fissa a sinistra su desktop, barra in basso su mobile */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem 0.75rem;
+  border-right: 1px solid var(--linea);
+}
+
+.brand {
+  display: block;
+  padding: 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primario);
+  text-decoration: none;
+}
+
+/* Link di navigazione: pill piene larghezza, "active" la mette NavLink */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.menu a {
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--raggio-pill);
+  color: var(--inchiostro);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu a:hover {
+  background: var(--carta-2);
+}
+
+.menu a.active {
+  background: var(--primario-tenue);
+  color: var(--primario);
+  font-weight: 600;
+}
+
+/* Blocco utente in fondo alla colonna */
+.utente-corrente {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  border-radius: var(--raggio);
+  background: var(--carta);
+  border: 1px solid var(--linea);
+}
+
+.utente-corrente .dati {
+  min-width: 0; /* permette al nome lungo di troncarsi */
+  flex: 1;
+}
+
+.utente-corrente .nome {
+  display: block;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.utente-corrente .nota {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.azioni-sidebar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.azioni-sidebar button {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* --- Mobile: barra in basso --------------------------------------------- */
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--carta);
+    border-right: none;
+    border-top: 1px solid var(--linea);
+    box-shadow: var(--ombra-alta);
+  }
+
+  /* Brand e scheda utente non ci stanno: restano nav e azioni */
+  .brand,
+  .utente-corrente {
+    display: none;
+  }
+
+  .menu {
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .menu a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .azioni-sidebar button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

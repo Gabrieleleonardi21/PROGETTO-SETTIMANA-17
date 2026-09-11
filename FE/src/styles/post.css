@@ -1,0 +1,96 @@
+/* Card di un singolo post */
+
+.post {
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: apparire 0.25s ease-out;
+}
+
+.post:hover {
+  box-shadow: var(--ombra-alta);
+}
+
+.post-testa {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-testa .nota {
+  margin: 0;
+}
+
+/* Le azioni (Elimina) a destra */
+.post-azioni {
+  margin-left: auto;
+}
+
+/* pre-wrap: rispetta gli a capo scritti dall'utente */
+.post-testo {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+}
+
+.post-luogo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--primario);
+}
+
+.post-luogo > span {
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--raggio-pill);
+  background: var(--primario-tenue);
+}
+
+/* La mini-mappa va a capo sotto nome e bottone */
+.post-luogo .mappa {
+  flex-basis: 100%;
+}
+
+/* Griglia delle foto */
+.post-foto {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0.75rem;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--linea);
+  background: var(--carta-2);
+}
+
+.foto-azioni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+/* Testo riconosciuto dall'OCR. pre-wrap: manda a capo le righe lunghe */
+.foto-testo {
+  margin: 0.4rem 0 0;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--carta-2);
+  border-radius: 8px;
+}

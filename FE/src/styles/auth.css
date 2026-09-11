@@ -1,0 +1,83 @@
+/* Pagine di login e registrazione: una card centrata su sfondo sfumato */
+
+.pagina-auth {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background:
+    radial-gradient(60rem 30rem at 20% -10%, var(--primario-tenue), transparent 60%),
+    radial-gradient(40rem 25rem at 110% 110%, var(--primario-tenue), transparent 60%),
+    var(--sfondo);
+}
+
+.riquadro {
+  width: 100%;
+  max-width: 25rem;
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra-alta);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  animation: apparire 0.3s ease-out;
+}
+
+/* Nome dell'app sopra il titolo della card */
+.riquadro .brand-auth {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primario);
+}
+
+.riquadro h1 {
+  font-size: 1.6rem;
+}
+
+/* Etichetta sopra l'input, in colonna */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.campo > span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--grigio);
+}
+
+.campo small {
+  font-size: 0.8rem;
+}
+
+.riquadro input {
+  padding: 0.7rem 0.9rem;
+}
+
+.riquadro button.primaria {
+  margin-top: 0.25rem;
+  padding: 0.75rem;
+}
+
+.link {
+  color: var(--primario);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .riquadro {
+    padding: 1.75rem 1.25rem;
+  }
+}

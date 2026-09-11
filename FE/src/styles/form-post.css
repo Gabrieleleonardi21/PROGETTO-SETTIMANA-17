@@ -1,0 +1,104 @@
+/* Form del nuovo post e fotocamera */
+
+.form-post {
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Il bordo della card si accende quando si scrive dentro */
+.form-post:focus-within {
+  border-color: var(--primario);
+  box-shadow: var(--ombra-alta);
+}
+
+/* La textarea e' "aperta": niente bordo, si capisce dal placeholder */
+.form-post textarea {
+  border-color: transparent;
+  background: transparent;
+  padding: 0.4rem 0.2rem;
+  font-size: 1.05rem;
+  resize: vertical;
+}
+
+.form-post textarea:focus-visible {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.contatore {
+  text-align: right;
+  margin: 0;
+}
+
+/* Etichetta sopra l'input, in colonna (stessa forma di auth.css) */
+.form-post .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-post .campo > span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--grigio);
+}
+
+/* Selettore di modalita' (indirizzo / mappa) */
+.scelta-posizione {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.scelta-posizione button.attivo {
+  background: var(--primario-tenue);
+  border-color: var(--primario-tenue);
+  color: var(--primario);
+  font-weight: 600;
+}
+
+.punto-scelto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.file-scelti {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.file-scelti li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  background: var(--carta-2);
+}
+
+.form-post button.primaria {
+  align-self: flex-end;
+}
+
+/* La webcam su fondo scuro: l'anteprima si vede meglio mentre si inquadra */
+.fotocamera video {
+  display: block;
+  width: 100%;
+  max-width: 30rem;
+  background: #000;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}

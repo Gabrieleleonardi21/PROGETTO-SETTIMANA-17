@@ -1,0 +1,20 @@
+/* Lista dei post */
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feed-vuoto {
+  background: var(--carta-2);
+  border: 1px dashed var(--linea);
+  border-radius: var(--raggio);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.carica-altri {
+  align-self: center;
+  padding: 0.6rem 2rem;
+}

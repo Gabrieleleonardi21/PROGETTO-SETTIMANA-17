@@ -1,0 +1,89 @@
+/* Sezione documenti del profilo */
+
+.documenti {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.documenti > h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0;
+}
+
+.form-documento {
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-documento button.primaria {
+  align-self: flex-end;
+}
+
+.file-pronto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  background: var(--carta-2);
+}
+
+.lista-documenti {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.documento {
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: apparire 0.25s ease-out;
+}
+
+.documento-testa {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.documento-dati {
+  min-width: 0;
+}
+
+.documento-dati strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.documento-dati .nota {
+  margin: 0;
+}
+
+/* Stesso aspetto di .foto-testo in post.css */
+.documento .foto-testo {
+  margin: 0;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--carta-2);
+  border-radius: 8px;
+}

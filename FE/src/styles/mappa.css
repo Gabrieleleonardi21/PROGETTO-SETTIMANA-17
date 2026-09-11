@@ -1,0 +1,35 @@
+/* Mappa Leaflet: selettore nel form e mini-mappa nel post */
+
+.mappa {
+  height: 12rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--linea);
+}
+
+.mappa-selettore {
+  height: 18rem;
+  cursor: crosshair;
+}
+
+/* Leaflet vuole un'altezza esplicita sul contenitore, altrimenti la mappa e' alta 0 */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* In tema scuro le tessere (chiare) vengono attenuate per non abbagliare */
+[data-theme='dark'] .leaflet-tile {
+  filter: brightness(0.85) contrast(1.05) saturate(0.9);
+}
+
+/* Marker disegnato in CSS al posto dell'immagine di default di Leaflet */
+.pin-mappa {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primario);
+  border: 3px solid var(--carta);
+  box-shadow: 0 0 0 2px var(--primario);
+}

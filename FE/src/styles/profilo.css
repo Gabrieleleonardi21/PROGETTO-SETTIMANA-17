@@ -1,0 +1,76 @@
+/* Scheda profilo e avatar */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: #fff; /* le tinte sotto sono tutte scure abbastanza per il bianco */
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  user-select: none;
+  box-shadow: 0 0 0 2px var(--carta);
+}
+
+.avatar-grande {
+  width: 4.75rem;
+  height: 4.75rem;
+  font-size: 1.6rem;
+}
+
+/* Otto tinte: Avatar.jsx sceglie la classe in base allo username */
+.avatar-tinta-0 { background: #2f6fed; }
+.avatar-tinta-1 { background: #7c3aed; }
+.avatar-tinta-2 { background: #059669; }
+.avatar-tinta-3 { background: #ea580c; }
+.avatar-tinta-4 { background: #db2777; }
+.avatar-tinta-5 { background: #0d9488; }
+.avatar-tinta-6 { background: #4f46e5; }
+.avatar-tinta-7 { background: #dc2626; }
+
+.profilo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 1.5rem;
+  animation: apparire 0.25s ease-out;
+}
+
+.profilo-dati h2 {
+  font-size: 1.3rem;
+}
+
+/* Coppie etichetta/valore su due colonne */
+.profilo-dati dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 1rem;
+  margin: 0.75rem 0 0;
+}
+
+.profilo-dati dt {
+  color: var(--grigio);
+  font-size: 0.85rem;
+}
+
+.profilo-dati dd {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .profilo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profilo-dati dl {
+    text-align: left;
+  }
+}

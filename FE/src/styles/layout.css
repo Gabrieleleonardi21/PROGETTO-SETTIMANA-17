@@ -1,0 +1,29 @@
+/* Griglia delle pagine protette: sidebar a sinistra, colonna del contenuto al centro */
+
+.app {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 40rem);
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+  padding: 0 1rem;
+}
+
+.colonna {
+  padding: 1.5rem 0 4rem;
+  animation: apparire 0.25s ease-out;
+}
+
+/* Sotto gli 800px la sidebar diventa una barra in basso (vedi sidebar.css):
+   una sola colonna e spazio in fondo per non coprire l'ultimo post */
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0 0.75rem;
+  }
+
+  .colonna {
+    padding: 1rem 0 5.5rem;
+  }
+}

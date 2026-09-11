@@ -1,0 +1,37 @@
+/* Elenco utenti per il moderatore */
+
+.utenti {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.utente {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--carta);
+  border: 1px solid var(--linea);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra);
+  padding: 0.75rem 1rem;
+  animation: apparire 0.25s ease-out;
+}
+
+.utente-dati {
+  flex: 1;
+  min-width: 0;
+}
+
+.utente .nota {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .utente {
+    flex-wrap: wrap;
+  }
+}
